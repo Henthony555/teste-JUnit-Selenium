@@ -1,4 +1,6 @@
-Package br.com.ifpe.recorremultas.modelo.peticao;
+package br.com.ifpe.recorremultas.modelo.peticao;
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -26,38 +28,38 @@ import lombok.Setter;
 public class Peticao extends EntidadeAuditavel  {
 
    @Column
-   Private String nomeCompleto;
+   private String nomeCompleto;
    @Column
-   Private String nacionalidade;
+   private String nacionalidade;
    @Column
-   Private String estadoCivil;
+   private String estadoCivil;
    @Column
-   Private String profissao;
+   private String profissao;
    @Column
-   Private String cnh;
+   private String cnh;
    @Column
-   Private String orgaoExpeditor;
+   private String orgaoExpeditor;
    @Column
-   Private String cpf;
+   private String cpf;
    @Column
-   Private String telefone;
+   private String telefone;
    @Column
-   Private String enderecoCompleto;
+   private String enderecoCompleto;
    @Column
-   Private String marcaModelo;
+   private String marcaModelo;
    @Column
-   Private String placa;
+   private String placa;
    @Column
-   Private String renavam;
+   private String renavam;
    @Column
-   Private String chassi;
+   private String chassi;
    @Column
-   Private LocalDate dataMulta;
+   private LocalDate dataMulta;
    @Column
-   Private String orgaoEmissor;
+   private String orgaoEmissor;
    @Column
-   Private String notificacao;
+   private String notificacao;
    @Column
-   Private String justificativaCancelamento;
+   private String justificativaCancelamento;
 
 }

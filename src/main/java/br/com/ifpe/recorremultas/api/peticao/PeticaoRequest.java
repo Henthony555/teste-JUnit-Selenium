@@ -16,25 +16,60 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PeticaoRequest {
 
-   private String nome;
+   private String nomeCompleto;
 
-   @JsonFormat(pattern = "dd/MM/yyyy")
-   private LocalDate dataNascimento;
+   private String nacionalidade;
+
+   private String estadoCivil;
+
+   private String profissao;
+
+   private String cnh;
+
+   private String orgaoExpeditor;
 
    private String cpf;
 
-   private String foneCelular;
+   private String telefone;
 
-   private String foneFixo;
+   private String enderecoCompleto;
+
+   private String marcaModelo;
+
+   private String placa;
+
+   private String renavam;
+
+   private String chassi;
+
+   @JsonFormat(pattern = "dd/MM/yyyy")
+   private LocalDate dataMulta;
+
+   private String orgaoEmissor;
+
+   private String notificacao;
+
+   private String justificativaCancelamento;
 
    public Peticao build() {
 
-       return Cliente.builder()
-               .nome(nome)
-               .cpf(cpf)
-               .foneCelular(foneCelular)
-               .foneFixo(foneFixo)
-               .dataNascimento(dataNascimento)
+       return Peticao.builder()
+               .nomeCompleto(nomeCompleto)
+               .nacionalidade(nacionalidade)
+               .estadoCivil(estadoCivil)
+               .profissao(profissao)
+               .cnh(cnh)
+               .orgaoExpeditor(orgaoExpeditor)
+               .telefone(telefone)
+               .enderecoCompleto(enderecoCompleto)
+               .marcaModelo(marcaModelo)
+               .placa(placa)
+               .chassi(chassi)
+               .dataMulta(dataMulta)
+               .orgaoEmissor(orgaoEmissor)
+               .notificacao(notificacao)
+               .justificativaCancelamento(justificativaCancelamento)
                .build();
+              
    }
 }
