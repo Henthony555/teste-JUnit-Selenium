@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import lombok.Getter;
 import lombok.Setter;
-
+//test
 @Getter
 @Setter
 public abstract class EntidadeAuditavel extends EntidadeNegocio {
