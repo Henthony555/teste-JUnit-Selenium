@@ -1,4 +1,4 @@
-package br.com.ifpe.recorremultas.modelo;
+package br.com.ifpe.recorremultas.modelo.usuario;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

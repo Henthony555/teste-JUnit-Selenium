@@ -1,4 +1,4 @@
-package br.com.ifpe.recorremultas.modelo;
+package br.com.ifpe.recorremultas.modelo.usuario;
 
 import java.util.List;
 

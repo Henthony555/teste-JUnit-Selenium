@@ -1,10 +1,10 @@
-package br.com.ifpe.recorremultas.api;
+package br.com.ifpe.recorremultas.api.usuario;
 
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import br.com.ifpe.recorremultas.modelo.Usuario;
+import br.com.ifpe.recorremultas.modelo.usuario.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
