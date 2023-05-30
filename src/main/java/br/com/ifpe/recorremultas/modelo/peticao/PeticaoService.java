@@ -1,4 +1,4 @@
-package br.com.ifpe.oxefood.modelo.peticao;
+package br.com.ifpe.recorremultas.modelo.peticao;
 
 import java.util.List;
 

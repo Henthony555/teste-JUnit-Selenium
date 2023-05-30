@@ -1,4 +1,4 @@
-package br.com.ifpe.oxefood.modelo.peticao;
+package br.com.ifpe.recorremultas.modelo.peticao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

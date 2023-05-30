@@ -1,19 +1,17 @@
-Package br.com.ifpe.oxefood.modelo.peticao;
-
-import java.time.LocalDate;
-
+Package br.com.ifpe.recorremultas.modelo.peticao;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Where;
 
-import br.com.ifpe.oxefood.util.entity.EntidadeAuditavel;
+import br.com.ifpe.recorremultas.util.entity.EntidadeAuditavel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 
 @Entity
