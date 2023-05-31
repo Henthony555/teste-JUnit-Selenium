@@ -17,7 +17,7 @@ import lombok.Setter;
 
 
 @Entity
-@Table(name = "Petição")
+@Table(name = "Peticao")
 @Where(clause = "habilitado = true")
 
 @Builder
