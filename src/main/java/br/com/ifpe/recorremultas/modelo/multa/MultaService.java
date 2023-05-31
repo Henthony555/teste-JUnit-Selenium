@@ -1,5 +1,7 @@
 package br.com.ifpe.recorremultas.modelo.multa;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,4 +22,32 @@ public class MultaService extends GenericService {
        return repository.save(multa);
    }
 
+   @Transactional
+   public List<Multa> listAll() {
+    
+    return repository.findAll();
+
+   }
+
+   @Transactional
+   public Multa listById(Long id) {
+    
+    return repository.findById(id).get();
+
+   }
+
+   @Transactional
+   public void update(Long id, Multa multaAlterado){
+
+        Multa multa = repository.findById(id).get();
+        multa.setCodigo(multaAlterado.getCodigo());
+        multa.setInfracao(multaAlterado.getInfracao());
+        multa.setValorMulta(multaAlterado.getValorMulta());
+        multa.setPontosDescontados(multaAlterado.getPontosDescontados());
+        multa.setGrauMulta(multaAlterado.getGrauMulta());
+
+        super.preencherCamposAuditoria(multa);
+        repository.save(multa);
+
+   }
 }
