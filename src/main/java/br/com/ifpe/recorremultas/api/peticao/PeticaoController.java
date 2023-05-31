@@ -23,13 +23,6 @@ import br.com.ifpe.recorremultas.util.entity.GenericController;
 @RequestMapping("/api/peticao")
 public class PeticaoController extends GenericController {
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Peticao> update(@PathVariable("id") Long id, @RequestBody PeticaoRequest request) {
- 
-        peticaoService.update(id, request.build());
-        return ResponseEntity.ok().build();
-    } 
-
    @Autowired
    private PeticaoService peticaoService;
 
@@ -52,6 +45,12 @@ public class PeticaoController extends GenericController {
        return peticaoService.obterPorID(id);
    }
 
- 
+   @PutMapping("/{id}")
+   public ResponseEntity<Peticao>update(@PathVariable("id") Long id, @RequestBody PeticaoRequest request) {
+
+      peticaoService.update(id, request.build());
+       return ResponseEntity.ok().build();
+   }
+
 }
 
