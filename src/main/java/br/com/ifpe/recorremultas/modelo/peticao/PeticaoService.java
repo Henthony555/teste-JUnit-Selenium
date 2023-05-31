@@ -16,13 +16,22 @@ public class PeticaoService extends GenericService {
     public void update(Long id, Peticao peticaoAlterado) {
  
        Peticao peticao = repository.findById(id).get();
-       peticao.setNome(peticaoAlterado.getNome());
-       peticao.setDataNascimento(peticaoAlterado.getDataNascimento());
+       peticao.setNomeCompleto(peticaoAlterado.getNomeCompleto());
+       peticao.setNacionalidade(peticaoAlterado.getNacionalidade());
+       peticao.setEstadoCivil(peticaoAlterado.getEstadoCivil());
+       peticao.setCnh(peticaoAlterado.getCnh());
+       peticao.setOrgaoExpeditor(peticaoAlterado.getOrgaoExpeditor());
        peticao.setCpf(peticaoAlterado.getCpf());
-       peticao.setFoneCelular(peticaoAlterado.getFoneCelular());
-       peticao.setFoneFixo(peticaoAlterado.getFoneFixo());
-         
-       super.preencherCamposAuditoria(peticao);
+       peticao.setTelefone(peticaoAlterado.getTelefone());
+       peticao.setEnderecoCompleto(peticaoAlterado.getEnderecoCompleto());
+       peticao.setMarcaModelo(peticaoAlterado.getMarcaModelo());
+       peticao.setPlaca(peticaoAlterado.getPlaca());
+       peticao.setRenavam(peticaoAlterado.getRenavam());
+       peticao.setChassi(peticaoAlterado.getChassi());
+       peticao.setDataMulta(peticaoAlterado.getDataMulta());
+       peticao.setOrgaoEmissor(peticaoAlterado.getOrgaoEmissor());
+       peticao.setNotificacao(peticaoAlterado.getNotificacao());
+       peticao.setJustificativaCancelamento(peticaoAlterado.getJustificativaCancelamento());
        repository.save(peticao);
    }
 
