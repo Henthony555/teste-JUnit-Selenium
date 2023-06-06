@@ -1,12 +1,9 @@
 package br.com.ifpe.recorremultas.modelo.usuario;
 
 import java.util.List;
-
 import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import br.com.ifpe.recorremultas.util.entity.GenericService;
 
 @Service

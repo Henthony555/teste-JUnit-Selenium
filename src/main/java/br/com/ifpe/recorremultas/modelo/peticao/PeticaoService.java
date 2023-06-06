@@ -12,29 +12,6 @@ import br.com.ifpe.recorremultas.util.entity.GenericService;
 @Service
 public class PeticaoService extends GenericService {
 
-    @Transactional
-    public void update(Long id, Peticao peticaoAlterado) {
- 
-       Peticao peticao = repository.findById(id).get();
-       peticao.setNomeCompleto(peticaoAlterado.getNomeCompleto());
-       peticao.setNacionalidade(peticaoAlterado.getNacionalidade());
-       peticao.setEstadoCivil(peticaoAlterado.getEstadoCivil());
-       peticao.setCnh(peticaoAlterado.getCnh());
-       peticao.setOrgaoExpeditor(peticaoAlterado.getOrgaoExpeditor());
-       peticao.setCpf(peticaoAlterado.getCpf());
-       peticao.setTelefone(peticaoAlterado.getTelefone());
-       peticao.setEnderecoCompleto(peticaoAlterado.getEnderecoCompleto());
-       peticao.setMarcaModelo(peticaoAlterado.getMarcaModelo());
-       peticao.setPlaca(peticaoAlterado.getPlaca());
-       peticao.setRenavam(peticaoAlterado.getRenavam());
-       peticao.setChassi(peticaoAlterado.getChassi());
-       peticao.setDataMulta(peticaoAlterado.getDataMulta());
-       peticao.setOrgaoEmissor(peticaoAlterado.getOrgaoEmissor());
-       peticao.setNotificacao(peticaoAlterado.getNotificacao());
-       peticao.setJustificativaCancelamento(peticaoAlterado.getJustificativaCancelamento());
-       repository.save(peticao);
-   }
-
    @Autowired
    private PeticaoRepository repository;
 
@@ -50,11 +27,45 @@ public class PeticaoService extends GenericService {
     return repository.findAll();
 }
 
-public Peticao obterPorID(Long id) {
+    public Peticao obterPorID(Long id) {
 
     return repository.findById(id).get();
 }
 
-  
+@Transactional
+public void update(Long id, Peticao peticaoAlterado) {
+
+    Peticao peticao = repository.findById(id).get();
+    peticao.setNomeCompleto(peticaoAlterado.getNomeCompleto());
+    peticao.setNacionalidade(peticaoAlterado.getNacionalidade());
+    peticao.setEstadoCivil(peticaoAlterado.getEstadoCivil());
+    peticao.setProfissao(peticaoAlterado.getProfissao());
+    peticao.setCnh(peticaoAlterado.getCnh());
+    peticao.setOrgaoExpeditor(peticaoAlterado.getOrgaoExpeditor());
+    peticao.setCpf(peticaoAlterado.getCpf());
+    peticao.setTelefone(peticaoAlterado.getTelefone());
+    peticao.setEnderecoCompleto(peticaoAlterado.getEnderecoCompleto());
+    peticao.setMarcaModelo(peticaoAlterado.getMarcaModelo());
+    peticao.setPlaca(peticaoAlterado.getPlaca());
+    peticao.setRenavam(peticaoAlterado.getRenavam());
+    peticao.setChassi(peticaoAlterado.getChassi());
+    peticao.setDataMulta(peticaoAlterado.getDataMulta());
+    peticao.setOrgaoEmissor(peticaoAlterado.getOrgaoEmissor());
+    peticao.setNotificacao(peticaoAlterado.getNotificacao());
+    peticao.setJustificativaCancelamento(peticaoAlterado.getJustificativaCancelamento());
+
+    super.preencherCamposAuditoria(peticao);
+    repository.save(peticao);
+}
+
+@Transactional
+public void delete(Long id) {
+
+    Peticao peticao = repository.findById(id).get();
+    peticao.setHabilitado(Boolean.FALSE);
+    super.preencherCamposAuditoria(peticao);
+
+    repository.save(peticao);
+}
 
 }
