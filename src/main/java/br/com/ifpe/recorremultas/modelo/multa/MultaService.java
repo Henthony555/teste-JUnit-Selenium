@@ -12,32 +12,32 @@ import br.com.ifpe.recorremultas.util.entity.GenericService;
 @Service
 public class MultaService extends GenericService {
 
-   @Autowired
-   private MultaRepository repository;
+    @Autowired
+    private MultaRepository repository;
 
-   @Transactional
-   public Multa save(Multa multa) {
+    @Transactional
+    public Multa save(Multa multa) {
 
-       super.preencherCamposAuditoria(multa);
-       return repository.save(multa);
-   }
+        super.preencherCamposAuditoria(multa);
+        return repository.save(multa);
+    }
 
-   @Transactional
-   public List<Multa> listAll() {
-    
-    return repository.findAll();
+    @Transactional
+    public List<Multa> listAll() {
 
-   }
+        return repository.findAll();
 
-   @Transactional
-   public Multa listById(Long id) {
-    
-    return repository.findById(id).get();
+    }
 
-   }
+    @Transactional
+    public Multa listById(Long id) {
 
-   @Transactional
-   public void update(Long id, Multa multaAlterado){
+        return repository.findById(id).get();
+
+    }
+
+    @Transactional
+    public void update(Long id, Multa multaAlterado) {
 
         Multa multa = repository.findById(id).get();
         multa.setCodigo(multaAlterado.getCodigo());
@@ -49,5 +49,15 @@ public class MultaService extends GenericService {
         super.preencherCamposAuditoria(multa);
         repository.save(multa);
 
-   }
+    }
+
+    @Transactional
+    public void delete(Long id) {
+
+        Multa multa = repository.findById(id).get();
+        multa.setHabilitado(Boolean.FALSE);
+        super.preencherCamposAuditoria(multa);
+
+        repository.save(multa);
+    }
 }
