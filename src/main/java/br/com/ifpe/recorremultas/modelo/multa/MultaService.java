@@ -49,15 +49,16 @@ public class MultaService extends GenericService {
         super.preencherCamposAuditoria(multa);
         repository.save(multa);
 
-    }
+   }
 
-    @Transactional
-    public void delete(Long id) {
+   @Transactional
+   public void delete(Long id) {
 
-        Multa multa = repository.findById(id).get();
-        multa.setHabilitado(Boolean.FALSE);
-        super.preencherCamposAuditoria(multa);
+       Multa multa = repository.findById(id).get();
+       multa.setHabilitado(Boolean.FALSE);
+       super.preencherCamposAuditoria(multa);
 
-        repository.save(multa);
-    }
+       repository.save(multa);
+   }
+
 }

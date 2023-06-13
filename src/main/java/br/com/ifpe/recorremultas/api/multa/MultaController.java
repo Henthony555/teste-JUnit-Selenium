@@ -53,11 +53,4 @@ public class MultaController extends GenericController {
        return ResponseEntity.ok().build();
    }
 
-   @DeleteMapping("/{id}")
-   public ResponseEntity<Void> delete(@PathVariable Long id) {
-
-        multaService.delete(id);
-       return ResponseEntity.ok().build();
-   }
-
 }
